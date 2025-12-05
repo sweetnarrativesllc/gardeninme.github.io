@@ -3,7 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Garden In Me – Nalina Siva</title>
+  <title>The Garden In Me – Children’s Picture Book by Nalina Siva</title>
+
+  <!-- Basic SEO -->
+  <meta name="description" content="The Garden In Me is a gentle, beautifully illustrated picture book that helps children explore their emotions like flowers in a garden — with curiosity, kindness, and joy. Perfect for ages 4–10." />
+  <meta name="author" content="Nalina Siva" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Garden In Me – Children’s Picture Book by Nalina Siva" />
+  <meta property="og:description" content="A gentle story that helps children explore their emotions like flowers in a garden." />
+  <meta property="og:image" content="img/garden-in-me-cover.jpg" />
+  <meta property="og:url" content="https://thegardeninme.com" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Garden In Me – Children’s Picture Book" />
+  <meta name="twitter:description" content="A gentle, beautifully illustrated story that helps children explore their emotions." />
+  <meta name="twitter:image" content="img/garden-in-me-cover.jpg" />
 
   <!-- Bootstrap 5 CSS -->
   <link
@@ -11,115 +28,462 @@
     rel="stylesheet"
   >
 
-  <!-- Google Font (optional but pretty) -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
   <style>
-    body {
-      font-family: "Quicksand", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: #f7fdf6;
+    :root {
+      --garden-green: #1f7a4d;
+      --garden-soft-green: #e7f8ee;
+      --garden-soft-yellow: #fff6d6;
+      --garden-cream: #fdfbf2;
+      --garden-deep: #1f2e2a;
+      --radius-xl: 2rem;
+      --shadow-soft: 0 18px 45px rgba(15, 67, 45, 0.22);
     }
 
-    /* Hero section */
+    * {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Quicksand", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #bff2c1 0, #fdfbf2 45%, #fdf7de 100%);
+      color: var(--garden-deep);
+    }
+
+    /* NAVBAR */
+    .navbar {
+      transition: background-color 0.25s ease, box-shadow 0.25s ease, padding 0.25s ease;
+      padding-block: 0.75rem;
+      background: rgba(253, 251, 242, 0.9);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar.scrolled {
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding-block: 0.55rem;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: baseline;
+      gap: 0.2rem;
+    }
+
+    .navbar-brand span {
+      font-family: "Playfair Display", serif;
+      font-size: 1.3rem;
+    }
+
+    .navbar-brand .brand-accent {
+      color: var(--garden-green);
+    }
+
+    .nav-link {
+      font-weight: 500;
+      position: relative;
+      padding-inline: 0.75rem !important;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 4px;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #4fb476, #f7b633);
+      transition: width 0.2s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link:focus::after {
+      width: 60%;
+    }
+
+    /* HERO */
     .hero {
-      background: linear-gradient(135deg, #9be58d 0%, #fdf8d9 40%, #f7fdf6 100%);
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding-top: 72px; /* space for navbar */
+      padding-top: 90px;
+      padding-bottom: 80px;
+      position: relative;
+      overflow: hidden;
     }
 
     .hero-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.85);
-      padding: 6px 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.9rem;
       border-radius: 999px;
-      font-size: 0.9rem;
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 0.78rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #2f6f2f;
+      letter-spacing: 0.12em;
+      color: #347a4b;
+      box-shadow: 0 10px 30px rgba(27, 85, 52, 0.12);
+    }
+
+    .hero-badge span {
+      font-size: 1.05rem;
     }
 
     .hero-title {
+      font-family: "Playfair Display", serif;
       font-weight: 700;
-      font-size: 2.7rem;
+      font-size: clamp(2.8rem, 4vw, 3.4rem);
+      line-height: 1.1;
+      color: #1f3825;
     }
 
     .hero-subtitle {
-      font-size: 1.15rem;
-      color: #355235;
+      font-size: 1.1rem;
+      color: #36553d;
+      max-width: 32rem;
+    }
+
+    .hero-tagline {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #4a6f51;
+      margin-top: 1.25rem;
+    }
+
+    .hero-cta-primary {
+      box-shadow: 0 16px 35px rgba(23, 105, 63, 0.44);
+      border-radius: 999px;
+      font-weight: 600;
+      padding-inline: 1.9rem;
+      padding-block: 0.8rem;
+    }
+
+    .hero-cta-secondary {
+      border-radius: 999px;
+      font-weight: 600;
+      padding-inline: 1.7rem;
+      padding-block: 0.8rem;
+    }
+
+    .hero-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.9rem;
+      margin-top: 1.25rem;
+      color: #376542;
+    }
+
+    .hero-rating-stars {
+      color: #f3a81c;
+      font-size: 1rem;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.75rem;
+      margin-top: 1.25rem;
+      font-size: 0.94rem;
+      color: #476046;
+    }
+
+    .hero-pill span {
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(52, 124, 79, 0.14);
+    }
+
+    .hero-illustration-wrap {
+      position: relative;
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      bottom: 5%;
+      left: 5%;
+      padding: 0.65rem 0.9rem;
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.18);
+      font-size: 0.85rem;
+      max-width: 240px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-floating-card span {
+      display: block;
+      font-weight: 600;
+      color: #295938;
+    }
+
+    .hero-floating-badge {
+      position: absolute;
+      top: 5%;
+      right: 6%;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      background: linear-gradient(120deg, #ffdd7d, #ffa73d);
+      color: #4a2b09;
+      font-weight: 700;
+      box-shadow: 0 16px 40px rgba(179, 123, 31, 0.5);
+      font-size: 0.85rem;
     }
 
     .book-cover-shadow {
-      border-radius: 16px;
-      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.2);
+      border-radius: 1.2rem;
+      box-shadow: var(--shadow-soft);
+      max-width: 380px;
     }
 
+    /* Sections */
     .section-label {
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      font-size: 0.8rem;
-      color: #5f7f5f;
+      font-size: 0.83rem;
+      color: #6f8b73;
       font-weight: 600;
     }
 
     .section-title {
+      font-family: "Playfair Display", serif;
       font-weight: 700;
-      color: #264226;
+      color: #223526;
+      font-size: clamp(1.9rem, 3vw, 2.3rem);
+    }
+
+    .section-lead {
+      font-size: 1rem;
+      color: #465a4a;
+    }
+
+    .bg-soft-green {
+      background: var(--garden-soft-green);
+    }
+
+    .bg-soft-yellow {
+      background: var(--garden-soft-yellow);
     }
 
     .pill-icon {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       border-radius: 999px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: #e5f6e0;
-      margin-right: 8px;
+      background: #e2f7e8;
+      margin-right: 10px;
       font-size: 1.1rem;
     }
 
-    .bg-soft-green {
-      background: #f0f9ed;
-    }
-
-    .bg-soft-yellow {
-      background: #fff7da;
-    }
-
-    .testimonial-card {
-      background: white;
-      border-radius: 14px;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    .feature-card {
+      border-radius: 1.3rem;
       border: none;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
     }
 
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #4f6653;
+    }
+
+    .book-details-card {
+      border-radius: 1.4rem;
+      border: none;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .book-details-card ul {
+      padding-left: 0;
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .book-details-card li + li {
+      margin-top: 0.25rem;
+    }
+
+    .badge-soft {
+      background: rgba(144, 198, 148, 0.14);
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.8rem;
+      color: #2c5940;
+    }
+
+    /* Testimonial / Quotes */
+    .quote-card {
+      border-radius: 1.5rem;
+      border: none;
+      background: white;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-card::before {
+      content: "“";
+      position: absolute;
+      font-family: "Playfair Display", serif;
+      font-size: 5rem;
+      opacity: 0.08;
+      top: -1.2rem;
+      left: 0.8rem;
+    }
+
+    .quote-card small {
+      color: #6f7e76;
+    }
+
+    /* Author */
+    .author-photo {
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+      border: 6px solid #ffffff;
+    }
+
+    .author-tag {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #7a8a80;
+    }
+
+    /* Contact */
+    .contact-card {
+      border-radius: var(--radius-xl);
+      border: none;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.12);
+      background: rgba(255, 255, 255, 0.97);
+    }
+
+    /* Footer */
     .footer {
-      background: #264226;
-      color: #e7f5e4;
+      background: #18261f;
+      color: #d5e8da;
+      font-size: 0.85rem;
     }
 
-    a.text-footer-link {
-      color: #d0f5c6;
+    .footer a {
+      color: #b8f3c2;
       text-decoration: none;
     }
-    a.text-footer-link:hover {
+
+    .footer a:hover {
       text-decoration: underline;
+    }
+
+    /* Micro animations */
+    .btn {
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-position 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-success {
+      background-image: linear-gradient(120deg, #1f7a4d, #32a96a);
+      border: none;
+      background-size: 130% 130%;
+    }
+
+    .btn-success:hover {
+      background-position: 100% 0;
+      box-shadow: 0 14px 32px rgba(10, 80, 45, 0.4);
+    }
+
+    /* Scroll reveal */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal-on-scroll.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Utilities */
+    .max-w-32rem {
+      max-width: 32rem;
+    }
+
+    .floating-buy-mobile {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.6rem 1rem;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.96) 40%);
+      backdrop-filter: blur(10px);
+      z-index: 1030;
+    }
+
+    .floating-buy-mobile .btn {
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      .floating-buy-mobile {
+        display: none;
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      .hero {
+        text-align: center;
+      }
+
+      .hero-subtitle,
+      .hero-tagline {
+        margin-inline: auto;
+      }
+
+      .hero-illustration-wrap {
+        margin-top: 1.5rem;
+      }
+
+      .hero-floating-card {
+        display: none;
+      }
+
+      .hero-floating-badge {
+        top: 4%;
+        right: 50%;
+        transform: translateX(50%);
+      }
     }
   </style>
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90" tabindex="0">
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+<nav id="mainNav" class="navbar navbar-expand-lg navbar-light fixed-top">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="#top">
-      <span class="text-success">Nalina</span> Siva
+    <a class="navbar-brand" href="#top">
+      <span class="brand-accent">Nalina</span>
+      <span>Siva</span>
     </a>
     <button
       class="navbar-toggler"
@@ -133,16 +497,16 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="#book">The Book</a></li>
-        <li class="nav-item"><a class="nav-link" href="#for-grownups">For Parents & Teachers</a></li>
+        <li class="nav-item"><a class="nav-link" href="#for-grownups">For Parents &amp; Teachers</a></li>
         <li class="nav-item"><a class="nav-link" href="#author">About Nalina</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
       <a
         href="https://a.co/d/7utg5G7"
         target="_blank"
-        class="btn btn-success ms-lg-3 mt-2 mt-lg-0"
+        class="btn btn-success ms-lg-3 mt-3 mt-lg-0"
       >
         Buy on Amazon
       </a>
@@ -155,115 +519,148 @@
   <div class="container">
     <div class="row align-items-center g-5">
       <div class="col-lg-6">
-        <span class="hero-badge mb-3">New • Children’s Picture Book</span>
-        <h1 class="hero-title mt-2">
+        <div class="hero-badge mb-3">
+          <span>🌿</span>
+          <span>New · Children’s Picture Book</span>
+        </div>
+
+        <p class="hero-tagline mb-2">Emotions are a garden. Let children see theirs bloom.</p>
+
+        <h1 class="hero-title mb-3">
           The Garden In Me
         </h1>
-        <p class="hero-subtitle mt-3">
+
+        <p class="hero-subtitle mb-3">
           A gentle, beautifully illustrated story that helps children explore their emotions
           like flowers in a garden — with curiosity, kindness, and joy.
         </p>
-        <div class="mt-4 d-flex flex-wrap align-items-center gap-2">
+
+        <div class="hero-rating">
+          <div class="hero-rating-stars">★★★★★</div>
+          <div><strong>Early readers love it</strong> on Amazon</div>
+        </div>
+
+        <div class="hero-pill">
+          <span>Ages 4–10</span>
+          <span>Perfect for bedtime &amp; circle time</span>
+          <span>Supports Social–Emotional Learning (SEL)</span>
+        </div>
+
+        <div class="mt-4 d-flex flex-wrap align-items-center gap-3">
           <a
             href="https://a.co/d/7utg5G7"
             target="_blank"
-            class="btn btn-success btn-lg px-4 me-2"
+            class="btn btn-success btn-lg hero-cta-primary"
           >
-            🌿 Buy on Amazon
+            🌼 Buy on Amazon
           </a>
-          <a href="#book" class="btn btn-outline-success btn-lg px-4">
-            Peek Inside the Book
+          <a href="#book" class="btn btn-outline-success btn-lg hero-cta-secondary">
+            Peek inside the book
           </a>
         </div>
-        <p class="mt-4 text-muted">
-          Perfect for ages <strong>4–10</strong> · Ideal for
-          <strong>parents, teachers, therapists, and school counselors</strong>.
-        </p>
       </div>
 
-      <div class="col-lg-6 text-center">
-        <!-- Replace img src with your actual cover file or URL -->
-        <img
-          src="img/book-cover.jpg"
-          alt="The Garden In Me book cover"
-          class="img-fluid book-cover-shadow"
-        >
+      <div class="col-lg-6">
+        <div class="hero-illustration-wrap text-center">
+          <span class="hero-floating-badge">Now available on Amazon</span>
+
+          <!-- Replace src with your actual cover image -->
+          <img
+            src="img/garden-in-me-cover.jpg"
+            alt="The Garden In Me book cover"
+            class="img-fluid book-cover-shadow"
+          >
+
+          <div class="hero-floating-card">
+            <span>Helps kids say:</span>
+            “Today my garden feels sunny… and a little rainy too.”  
+            A comforting way to talk about big feelings.
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ABOUT THE BOOK -->
-<section class="py-5" id="book">
+<section class="py-5 py-lg-6" id="book">
   <div class="container">
-    <div class="row g-4 align-items-start">
-      <div class="col-lg-7">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-7 reveal-on-scroll">
         <div class="section-label mb-2">About the Book</div>
         <h2 class="section-title mb-3">
-          The Nature of Emotions &amp; The Beauty of Feelings
+          The Nature of Emotions &amp; the Beauty of Feelings
         </h2>
-        <p class="lead">
-          <em>The Garden In Me</em> invites children to imagine their inner world as a vibrant,
-          living garden. Some days are sunny and full of blooming joy. Other days bring storms,
-          muddy puddles, and drooping petals. And that’s okay.
+        <p class="section-lead max-w-32rem">
+          In <em>The Garden In Me</em>, children discover that their inner world is like a
+          living garden. Some days are bright and blooming. Other days bring rain, wind,
+          and muddy puddles. All of it belongs.
         </p>
         <p>
-          Through warm storytelling and rich illustrations, children learn that every feeling
-          — happiness, sadness, anger, fear, excitement, and everything in between — has a place
+          Through warm storytelling and rich illustrations, children learn that every feeling —
+          happiness, sadness, anger, fear, excitement, and everything in between — has a place
           in their garden. When we notice, name, and care for our emotions, our inner garden
           grows stronger, kinder, and more beautiful.
         </p>
 
         <div class="row mt-4 g-3">
           <div class="col-md-6">
-            <div class="p-3 rounded-4 bg-soft-green h-100">
-              <div class="d-flex align-items-center mb-2">
-                <span class="pill-icon">🌼</span>
-                <h6 class="mb-0 fw-bold">Social–Emotional Learning</h6>
+            <div class="p-3 p-md-4 bg-soft-green rounded-4 h-100 d-flex">
+              <div class="pill-icon">🌱</div>
+              <div>
+                <h6 class="fw-semibold mb-1">Social–Emotional Learning</h6>
+                <p class="mb-0 small">
+                  Supports SEL by giving children language and imagery to understand,
+                  normalize, and express their emotions in healthy ways.
+                </p>
               </div>
-              <p class="mb-0 small">
-                Designed to support Social–Emotional Learning (SEL) by helping kids name,
-                normalize, and understand their emotions.
-              </p>
             </div>
           </div>
+
           <div class="col-md-6">
-            <div class="p-3 rounded-4 bg-soft-yellow h-100">
-              <div class="d-flex align-items-center mb-2">
-                <span class="pill-icon">🌱</span>
-                <h6 class="mb-0 fw-bold">Perfect Read-Aloud</h6>
+            <div class="p-3 p-md-4 bg-soft-yellow rounded-4 h-100 d-flex">
+              <div class="pill-icon">📖</div>
+              <div>
+                <h6 class="fw-semibold mb-1">A Cozy Read-Aloud</h6>
+                <p class="mb-0 small">
+                  Perfect for bedtime, classroom circles, counseling sessions, or
+                  anytime a child needs emotional reassurance and gentle connection.
+                </p>
               </div>
-              <p class="mb-0 small">
-                A comforting read-aloud for bedtime, classroom circles, counseling sessions,
-                or any moment a child needs emotional reassurance.
-              </p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Quick Facts Card -->
-      <div class="col-lg-5">
-        <div class="card border-0 shadow-sm rounded-4">
-          <div class="card-body p-4">
-            <h5 class="card-title fw-bold mb-3">Book Details</h5>
-            <ul class="list-unstyled mb-3">
+      <!-- Book Details Card -->
+      <div class="col-lg-5 reveal-on-scroll">
+        <div class="card book-details-card">
+          <div class="card-body p-4 p-lg-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h5 class="fw-bold mb-0">Book Details</h5>
+              <span class="badge-soft">New release</span>
+            </div>
+            <ul class="mb-3">
               <li><strong>Title:</strong> The Garden In Me</li>
               <li><strong>Author:</strong> Nalina Siva</li>
               <li><strong>Illustrator:</strong> Rajane Ganth</li>
-              <li><strong>Format:</strong> Full-color picture book</li>
+              <li><strong>Format:</strong> Full-color picture book (large print)</li>
+              <li><strong>Length:</strong> 28 pages</li>
               <li><strong>Ideal Ages:</strong> 4–10</li>
+              <li><strong>Great for:</strong> Homes, classrooms, therapy &amp; school counseling</li>
             </ul>
-            <p class="small text-muted">
-              Great for homes, classrooms, therapy offices, and libraries looking to nurture
-              gentle emotional literacy.
+            <p class="small text-muted mb-3">
+              A beautiful addition to any library that values gentle, emotionally literate stories.
             </p>
             <a
               href="https://a.co/d/7utg5G7"
               target="_blank"
-              class="btn btn-success w-100 mt-2"
+              class="btn btn-success w-100 mb-2"
             >
-              Get Your Copy on Amazon
+              Get your copy on Amazon
+            </a>
+            <a href="#for-grownups" class="btn btn-outline-success w-100">
+              How to use it with kids
             </a>
           </div>
         </div>
@@ -273,55 +670,67 @@
 </section>
 
 <!-- FOR PARENTS & TEACHERS -->
-<section class="py-5 bg-soft-green" id="for-grownups">
+<section class="py-5 py-lg-6 bg-soft-green" id="for-grownups">
   <div class="container">
-    <div class="row mb-4">
-      <div class="col-lg-8">
+    <div class="row mb-4 justify-content-center text-center">
+      <div class="col-lg-8 reveal-on-scroll">
         <div class="section-label mb-2">For Parents, Teachers &amp; Counselors</div>
         <h2 class="section-title mb-3">A Gentle Tool for Big Feelings</h2>
-        <p>
-          Children often struggle to express what they feel. <em>The Garden In Me</em> gives
-          you a shared language to talk about emotions — using sunlight, rain, seeds, and
-          flowers as symbols they can easily understand.
+        <p class="section-lead">
+          Children often struggle to say what they feel. <em>The Garden In Me</em> gives you
+          a playful shared language — using sunlight, rain, seeds, and flowers — to explore
+          their inner world together.
         </p>
       </div>
     </div>
 
-    <div class="row g-3">
-      <div class="col-md-4">
-        <div class="card testimonial-card h-100">
-          <div class="card-body">
-            <h6 class="fw-bold mb-2">Conversation Starter</h6>
-            <p class="small mb-0">
-              Use the pages as prompts: “What does your garden feel like today?” “Are there
-              any stormy clouds?” Children open up more when they can answer through story
-              and imagery.
+    <div class="row g-3 g-lg-4">
+      <div class="col-md-4 reveal-on-scroll">
+        <div class="card feature-card h-100">
+          <div class="card-body p-4">
+            <h6 class="fw-semibold mb-2">Conversation Starter</h6>
+            <p class="mb-0">
+              Ask questions like, “What does your garden feel like today?” or “Did any storm
+              clouds show up?” Children open up more easily through story and picture.
             </p>
           </div>
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card testimonial-card h-100">
-          <div class="card-body">
-            <h6 class="fw-bold mb-2">Classroom & Group Use</h6>
-            <p class="small mb-0">
-              Ideal for circle time, SEL blocks, or small counseling groups. Invite each
-              child to draw their “garden” after reading.
+      <div class="col-md-4 reveal-on-scroll">
+        <div class="card feature-card h-100">
+          <div class="card-body p-4">
+            <h6 class="fw-semibold mb-2">Classroom &amp; Group Use</h6>
+            <p class="mb-0">
+              Ideal for circle time, SEL lessons, or small groups. Invite each child to draw
+              their own “garden” after reading and share what’s growing there.
             </p>
           </div>
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card testimonial-card h-100">
-          <div class="card-body">
-            <h6 class="fw-bold mb-2">Calming Ritual</h6>
-            <p class="small mb-0">
-              Make it part of a calming bedtime or check-in routine. The rhythm of the story
-              and the gentle imagery help children feel safe and seen.
+      <div class="col-md-4 reveal-on-scroll">
+        <div class="card feature-card h-100">
+          <div class="card-body p-4">
+            <h6 class="fw-semibold mb-2">Calming Ritual</h6>
+            <p class="mb-0">
+              Turn the book into a gentle nightly check-in: “What bloomed today? What needs
+              a little extra care?” The rhythm of the story helps children feel safe and seen.
             </p>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional quote / endorsement -->
+    <div class="row mt-5 justify-content-center">
+      <div class="col-lg-7 reveal-on-scroll">
+        <div class="quote-card p-4 p-md-4">
+          <p class="mb-2">
+            “This book gives children such a kind way to talk about their feelings. My students
+            ask for it again and again — they love checking in on their ‘gardens’.”
+          </p>
+          <small>— Elementary school counselor (early reader feedback)</small>
         </div>
       </div>
     </div>
@@ -329,31 +738,44 @@
 </section>
 
 <!-- ABOUT AUTHOR -->
-<section class="py-5" id="author">
+<section class="py-5 py-lg-6" id="author">
   <div class="container">
-    <div class="row align-items-center g-4">
-      <div class="col-lg-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5 text-center reveal-on-scroll">
         <!-- Optional author photo -->
-        <!-- Replace with your own photo or remove the img tag -->
-        <div class="bg-soft-yellow rounded-4 p-4 text-center">
-          <p class="mb-0 fw-semibold">“Every child carries a garden of feelings inside them.<br> My hope is to help them see its beauty.”</p>
+        <!-- Replace src with your real author photo or remove the image entirely -->
+        <img
+          src="img/nalina-siva.jpg"
+          alt="Author Nalina Siva"
+          class="author-photo mb-3"
+        >
+        <div class="bg-soft-yellow rounded-4 p-4">
+          <p class="mb-0 fw-semibold">
+            “Every child carries a garden of feelings inside them.  
+            My hope is to help them see its beauty.”
+          </p>
           <p class="mt-3 mb-0 text-muted small">– Nalina Siva</p>
         </div>
       </div>
-      <div class="col-lg-7">
+
+      <div class="col-lg-7 reveal-on-scroll">
         <div class="section-label mb-2">About the Author</div>
         <h2 class="section-title mb-3">Meet Nalina Siva</h2>
         <p>
-          <strong>Nalina Siva</strong> is a debut children’s book author with a deep love for
-          stories that heal, comfort, and gently guide young hearts. Inspired by the emotional
-          worlds of children around her, she wanted to create a book that speaks to their
-          inner lives with warmth and respect.
+          <strong>Nalina Siva</strong> is a debut children’s book author who loves stories
+          that heal, comfort, and gently guide young hearts. Inspired by the emotional worlds
+          of children around her, she set out to create a book that speaks to their inner lives
+          with warmth, respect, and wonder.
         </p>
         <p>
           <em>The Garden In Me</em> grew from a simple question: how can we help children see
           their emotions not as problems to fix, but as living, changing parts of a beautiful
           inner landscape? Her answer is this book — an invitation to sit beside a child and
-          explore that landscape together.
+          explore that landscape together, one feeling at a time.
+        </p>
+        <p>
+          Nalina is especially passionate about partnering with parents, teachers, therapists,
+          and school counselors who are nurturing children’s emotional well-being all over the world.
         </p>
       </div>
     </div>
@@ -361,37 +783,53 @@
 </section>
 
 <!-- CONTACT -->
-<section class="py-5 bg-soft-yellow" id="contact">
+<section class="py-5 py-lg-6 bg-soft-yellow" id="contact">
   <div class="container">
-    <div class="row justify-content-center text-center">
-      <div class="col-lg-7">
-        <div class="section-label mb-2">Contact & Events</div>
-        <h2 class="section-title mb-3">Invite The Garden Into Your Community</h2>
-        <p>
-          For school visits, library readings, bulk orders, collaborations, or interview
-          requests, you can reach Nalina directly.
-        </p>
-        <p class="fs-5">
-          📧 <a href="mailto:nalinasiva.author@gmail.com">nalinasiva.author@gmail.com</a>
-        </p>
-        <p class="small text-muted">
-          Nalina is happy to connect with teachers, librarians, mental health professionals,
-          and parents who are passionate about nurturing children’s emotional well-being.
-        </p>
+    <div class="row justify-content-center">
+      <div class="col-lg-8 reveal-on-scroll">
+        <div class="card contact-card border-0 p-4 p-md-5 text-center">
+          <div class="section-label mb-2">Contact &amp; Events</div>
+          <h2 class="section-title mb-3">Invite The Garden Into Your Community</h2>
+          <p class="section-lead mb-3">
+            For school visits, library readings, bulk orders, collaborations, or interview
+            requests, you can reach Nalina directly.
+          </p>
+          <p class="fs-5 mb-1">
+            📧
+            <a href="mailto:nalinasiva.author@gmail.com">
+              nalinasiva.author@gmail.com
+            </a>
+          </p>
+          <p class="small text-muted mb-0">
+            Nalina is happy to connect with teachers, librarians, mental health professionals,
+            and parents who are passionate about nurturing children’s emotional gardens.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- FLOATING BUY BUTTON (MOBILE) -->
+<div class="floating-buy-mobile">
+  <a
+    href="https://a.co/d/7utg5G7"
+    target="_blank"
+    class="btn btn-success btn-lg"
+  >
+    🌿 Buy “The Garden In Me” on Amazon
+  </a>
+</div>
+
 <!-- FOOTER -->
 <footer class="footer py-3">
-  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
-    <div class="small">
-      © 2025 Nalina Siva. All Rights Reserved.
+  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+    <div>
+      © 2025 <strong>Nalina Siva</strong>. All rights reserved.
     </div>
-    <div class="small mt-2 mt-md-0">
-      Website hosted with ❤️ on GitHub Pages ·
-      <a href="#top" class="text-footer-link">Back to top</a>
+    <div class="text-md-end">
+      Website crafted with care · Hosted on GitHub Pages ·
+      <a href="#top">Back to top ↑</a>
     </div>
   </div>
 </footer>
@@ -401,5 +839,36 @@
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 ></script>
 
+<script>
+  // Navbar shadow & background on scroll
+  const navbar = document.getElementById("mainNav");
+  const handleScroll = () => {
+    if (window.scrollY > 20) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  };
+  document.addEventListener("scroll", handleScroll);
+  handleScroll();
+
+  // Simple intersection observer for reveal-on-scroll elements
+  const revealElements = document.querySelectorAll(".reveal-on-scroll");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.18 }
+  );
+
+  revealElements.forEach((el) => observer.observe(el));
+</script>
+
 </body>
 </html>
+
