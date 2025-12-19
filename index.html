@@ -554,6 +554,72 @@
   border: 1px solid rgba(179, 123, 31, 0.18);
 }
 
+        /* Make the Activities card look like a premium centerpiece */
+.activities-card {
+  border: none;
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.10);
+  backdrop-filter: blur(10px);
+}
+
+/* Reduce “wall of text” feel and improve rhythm */
+.activities-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.activities-list li {
+  display: flex;
+  gap: 0.85rem;
+  padding: 1rem 1.05rem;
+  border-radius: 1.2rem;
+  background: rgba(231, 248, 238, 0.55);
+  border: 1px solid rgba(52, 124, 79, 0.12);
+}
+
+.activities-dot {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 246, 214, 0.9);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  font-size: 1.05rem;
+}
+
+/* Slightly larger emphasis on the bold titles inside each item */
+.activities-list strong {
+  color: #223526;
+}
+
+        .activities-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.activities-section::before {
+  content: "";
+  position: absolute;
+  inset: -45% -15% auto -15%;
+  height: 560px;
+  background: radial-gradient(circle at top, rgba(79, 180, 118, 0.22), rgba(255, 246, 214, 0) 70%);
+  pointer-events: none;
+}
+
+@media (min-width: 992px) {
+  .activities-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
     
   </style>
 
@@ -895,8 +961,9 @@
       </div>
     </div>
 
-    <div class="row g-4 align-items-stretch">
-      <div class="col-lg-8 reveal-on-scroll">
+<div class="row g-4 align-items-stretch justify-content-center">
+  <div class="col-lg-10 col-xl-9 reveal-on-scroll">
+
         <div class="card activities-card h-100">
           <div class="card-body p-4 p-lg-5">
             <ul class="activities-list">
