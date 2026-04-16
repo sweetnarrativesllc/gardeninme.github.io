@@ -353,7 +353,8 @@ a:hover {
 .book-cover-shadow {
   border-radius: 1.45rem;
   box-shadow: 0 30px 70px rgba(20, 57, 38, 0.18);
-  max-width: 420px;
+  max-width: 460px;
+  transform: translateY(10px);
   width: 100%;
   background: white;
 }
@@ -714,6 +715,7 @@ section {
 
 @media (max-width: 1199.98px) {
   .hero-title {
+    max-width: 9ch;   /* tighter = stronger */
     font-size: clamp(2.9rem, 4.8vw, 4.1rem);
   }
 
