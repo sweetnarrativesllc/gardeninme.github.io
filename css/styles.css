@@ -176,14 +176,14 @@
 
     .hero-floating-card {
       position: absolute;
-      bottom: 5%;
-      left: 5%;
+      bottom: 3%;
+      left: -2%;
       padding: 0.65rem 0.9rem;
       border-radius: 1rem;
       background: rgba(255, 255, 255, 0.9);
       box-shadow: 0 16px 45px rgba(0, 0, 0, 0.18);
-      font-size: 0.85rem;
-      max-width: 240px;
+      font-size: 0.78rem;
+      max-width: 190px;
       backdrop-filter: blur(8px);
     }
 
@@ -432,7 +432,9 @@
 
       .hero-subtitle,
       .hero-tagline {
-        margin-inline: auto;
+  text-transform: none;
+  letter-spacing: 0.03em;
+  font-size: 0.95rem;
       }
 
       .hero-illustration-wrap {
@@ -572,6 +574,12 @@
   pointer-events: none;
 }
 
+@media (max-width: 576px){
+  .navbar-brand span{
+    font-size: 1.15rem;
+  }
+}
+
 @media (min-width: 992px) {
   .activities-list {
     grid-template-columns: 1fr 1fr;
@@ -581,7 +589,7 @@
 @media (max-width: 991.98px) {
    .hero {
     padding-top: 78px;
-    padding-bottom: 24px;
+    padding-bottom: 40px;
     min-height: auto;
   }
 
@@ -590,8 +598,8 @@
   }
 
   .book-cover-shadow {
-    width: 72%;
-    max-width: 260px;
+    width: 76%;
+    max-width: 275px;
   }
 
   .hero-badge {
