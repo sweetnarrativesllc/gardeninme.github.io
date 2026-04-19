@@ -133,6 +133,7 @@
     font-size: clamp(2.8rem, 4vw, 3.4rem);
     line-height: 1.1;
     color: #1f3825;
+    margin-top:.3rem;
   }
 
   .hero-subtitle {
@@ -194,22 +195,27 @@
     border: 1px solid rgba(52, 124, 79, 0.14);
   }
 
-  .hero-illustration-wrap {
-    margin-bottom: .4rem;
-  }
+.hero-illustration-wrap{
+  position:relative;
+  display:inline-block;
+}
 
-  .hero-floating-card {
-    position: absolute;
-    bottom: 3%;
-    left: -2%;
-    padding: 0.65rem 0.9rem;
-    border-radius: 1rem;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.18);
-    font-size: 0.78rem;
-    max-width: 190px;
-    backdrop-filter: blur(8px);
-  }
+.hero-floating-card{
+  position:absolute;
+  left:-55px;
+  bottom:28px;
+
+  width:220px;
+  padding:0.9rem 1rem;
+
+  border-radius:1rem;
+  background:rgba(255,255,255,.94);
+  box-shadow:0 18px 45px rgba(0,0,0,.12);
+
+  font-size:.82rem;
+  line-height:1.45;
+  z-index:5;
+}
 
   .hero-floating-card span {
     display: block;
@@ -231,12 +237,20 @@
   }
 
   .hero-cover {
+  border: 1px solid rgba(120, 145, 110, 0.35);
   border-radius: 1.25rem;
   box-shadow:
-    0 20px 50px rgba(44, 94, 58, 0.16),
+    0 18px 40px rgba(44,94,58,0.14),
     0 8px 18px rgba(0,0,0,0.08);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  background: #fff;
+}
+
+.hero-cover:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 24px 55px rgba(44, 94, 58, 0.2),
+    0 12px 24px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  filter: saturate(1.04) contrast(1.03);
 }
 
 .hero-cover:hover {
@@ -248,10 +262,13 @@
 
 .hero-cover-shell {
   display: inline-block;
-  padding: 6px;
-  border-radius: 1.4rem;
-  background:
-    linear-gradient(145deg, rgba(255,255,255,0.55), rgba(255,255,255,0.15));
+  padding: 10px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  box-shadow:
+    0 18px 38px rgba(44, 94, 58, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
   .book-cover-shadow {
@@ -490,9 +507,7 @@
       margin-top: 1.5rem;
     }
 
-    .hero-floating-card {
-      display: none;
-    }
+
 
     .hero-floating-badge {
       top: 4%;
@@ -655,6 +670,12 @@
     margin-right: auto;
   }
 
+@media (max-width:991.98px){
+  .hero-floating-card{
+    display:none;
+  }
+}
+
   #book p,
   #author p,
   #stores p,
@@ -693,8 +714,8 @@
     }
 
       .hero-cover {
-    width: 78%;
-    max-width: 340px;
+    width: 84%;
+    max-width: 360px;
   }
 
     .hero-tagline {
@@ -740,9 +761,10 @@
       margin-top: 0.75rem !important;
     }
 
-    .navbar {
-    padding-block: 0.7rem;
-  }
+ .navbar{
+ padding-top:.55rem;
+ padding-bottom:.55rem;
+}
 
   .navbar .container {
     align-items: flex-start;
