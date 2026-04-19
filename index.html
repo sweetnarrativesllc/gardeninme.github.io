@@ -162,9 +162,9 @@
         <div class="col-lg-6 order-1 order-lg-2">
           <div class="hero-illustration-wrap text-center">
             <div class="hero-cover-shell">
-            <img src="img/cover-800.jpg" alt="The Garden In Me book cover"
-              class="img-fluid book-cover-shadow hero-cover" width="800" height="800" loading="eager"
-              fetchpriority="high" decoding="async">
+              <img src="img/cover-800.jpg" alt="The Garden In Me book cover"
+                class="img-fluid book-cover-shadow hero-cover" width="800" height="800" loading="eager"
+                fetchpriority="high" decoding="async">
             </div>
             <div class="hero-floating-card">
               <span>Helps kids say:</span>
@@ -887,6 +887,25 @@
     );
 
     revealElements.forEach((el) => observer.observe(el));
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const navCollapse = document.getElementById("navbarNav");
+      const navLinks = navCollapse.querySelectorAll(".nav-link");
+      const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navCollapse, {
+        toggle: false
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+          if (window.innerWidth < 992 && navCollapse.classList.contains("show")) {
+            bsCollapse.hide();
+          }
+        });
+      });
+    });
+
+
   </script>
 
 </body>
