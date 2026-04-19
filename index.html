@@ -43,6 +43,8 @@
     content="A beautifully illustrated story that helps children explore and understand their emotions.">
   <meta name="twitter:image" content="https://thegardeninme.com/img/og-cover.jpg">
 
+  <link rel="preload" as="image" href="img/cover-800.jpg">
+
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -80,37 +82,37 @@
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90" tabindex="0">
 
   <!-- NAVBAR -->
-<nav id="mainNav" class="navbar navbar-expand-lg navbar-light fixed-top">
-  <div class="container">
-    <a class="navbar-brand d-flex flex-column lh-sm" href="#top">
-      <span class="brand-accent">The Garden In Me</span>
-      <small class="brand-subtitle">by Nalina Siva</small>
-    </a>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav align-items-lg-center">
-        <li class="nav-item"><a class="nav-link" href="#book">The Book</a></li>
-        <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
-        <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
-        <li class="nav-item"><a class="nav-link" href="#stores">Stores</a></li>
-        <li class="nav-item"><a class="nav-link" href="#recognition">Recognition</a></li>
-        <li class="nav-item"><a class="nav-link" href="#for-grownups">For Parents &amp; Teachers</a></li>
-        <li class="nav-item"><a class="nav-link" href="#coloring-pages">Coloring Pages</a></li>
-        <li class="nav-item"><a class="nav-link" href="#author">About Nalina</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-
-      <a href="https://a.co/d/7utg5G7" target="_blank" class="btn btn-success ms-lg-3 mt-3 mt-lg-0">
-        Buy on Amazon
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex flex-column lh-sm" href="#top">
+        <span class="brand-accent">The Garden In Me</span>
+        <small class="brand-subtitle">by Nalina Siva</small>
       </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#book">The Book</a></li>
+          <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
+          <li class="nav-item"><a class="nav-link" href="#stores">Stores</a></li>
+          <li class="nav-item"><a class="nav-link" href="#recognition">Recognition</a></li>
+          <li class="nav-item"><a class="nav-link" href="#for-grownups">For Parents &amp; Teachers</a></li>
+          <li class="nav-item"><a class="nav-link" href="#coloring-pages">Coloring Pages</a></li>
+          <li class="nav-item"><a class="nav-link" href="#author">About Nalina</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+
+        <a href="https://a.co/d/7utg5G7" target="_blank" class="btn btn-success ms-lg-3 mt-3 mt-lg-0">
+          Buy on Amazon
+        </a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <!-- HERO -->
   <section class="hero" id="top">
@@ -159,8 +161,11 @@
 
         <div class="col-lg-6 order-1 order-lg-2">
           <div class="hero-illustration-wrap text-center">
-            <img src="img/cover.jpg" alt="The Garden In Me book cover" class="img-fluid book-cover-shadow">
-
+            <div class="hero-cover-shell">
+            <img src="img/cover-800.jpg" alt="The Garden In Me book cover"
+              class="img-fluid book-cover-shadow hero-cover" width="800" height="800" loading="eager"
+              fetchpriority="high" decoding="async">
+            </div>
             <div class="hero-floating-card">
               <span>Helps kids say:</span>
               “Today my garden feels sunny… and a little rainy too.”<br>

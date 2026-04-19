@@ -230,6 +230,30 @@
     font-size: 0.85rem;
   }
 
+  .hero-cover {
+  border-radius: 1.25rem;
+  box-shadow:
+    0 20px 50px rgba(44, 94, 58, 0.16),
+    0 8px 18px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: #fff;
+}
+
+.hero-cover:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 28px 65px rgba(44, 94, 58, 0.22),
+    0 12px 26px rgba(0,0,0,0.10);
+}
+
+.hero-cover-shell {
+  display: inline-block;
+  padding: 6px;
+  border-radius: 1.4rem;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.55), rgba(255,255,255,0.15));
+}
+
   .book-cover-shadow {
     border-radius: 1.2rem;
     box-shadow: var(--shadow-soft);
@@ -667,6 +691,11 @@
     .hero-badge {
       margin-bottom: 0.75rem !important;
     }
+
+      .hero-cover {
+    width: 78%;
+    max-width: 340px;
+  }
 
     .hero-tagline {
       margin-top: 0.75rem;
