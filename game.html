@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Garden In Me - My Feelings Garden</title>
+  <style>
+    :root{
+      --green:#2f7d4f;--light:#f4fff2;--sun:#ffd36e;--soil:#8a5a32;--ink:#2b3028;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(#f8fff6,#e8f8dd);color:var(--ink)}
+    header{min-height:280px;background:linear-gradient(rgba(25,75,35,.58),rgba(25,75,35,.25)),url('assets/booth_wide.jpg') center/cover;display:grid;place-items:center;text-align:center;color:white;padding:35px 18px}
+    header h1{font-size:clamp(2rem,6vw,4.6rem);margin:0;text-shadow:0 3px 10px #0008;line-height:1.05}
+    header p{font-size:clamp(1rem,2vw,1.35rem);max-width:780px;text-shadow:0 2px 8px #0008}
+    .wrap{max-width:1100px;margin:auto;padding:22px}
+    .panel{background:#ffffffcc;border:2px solid #d8efd1;border-radius:26px;box-shadow:0 10px 30px #2154211f;padding:22px;margin:18px 0;backdrop-filter: blur(5px)}
+    .intro{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center}
+    .intro img{width:100%;border-radius:20px;box-shadow:0 8px 22px #0002;max-height:330px;object-fit:cover}
+    .choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:14px;margin-top:16px}
+    .seed{border:0;border-radius:20px;padding:15px 10px;background:white;box-shadow:0 5px 14px #0001;cursor:pointer;font-size:1rem;transition:.15s transform,.15s box-shadow;border:2px solid #e5f2df}
+    .seed:hover,.seed:focus{transform:translateY(-3px);box-shadow:0 8px 18px #0002;outline:none;border-color:#9ed18f}
+    .seed .emoji{font-size:2.2rem;display:block;margin-bottom:6px}
+    .garden-wrap{position:relative;overflow:hidden;border-radius:26px;background:linear-gradient(#b9e9ff 0 48%, #a3d883 48% 66%, #9c6b3f 66%);min-height:430px;border:4px solid #89bf76}
+    .sun{position:absolute;right:35px;top:25px;width:82px;height:82px;background:var(--sun);border-radius:50%;box-shadow:0 0 35px #ffe38a}
+    .cloud{position:absolute;left:35px;top:35px;background:white;border-radius:30px;width:130px;height:45px;opacity:.88}.cloud:before,.cloud:after{content:"";position:absolute;background:white;border-radius:50%}.cloud:before{width:60px;height:60px;left:18px;top:-25px}.cloud:after{width:65px;height:65px;right:16px;top:-30px}
+    #garden{position:absolute;left:0;right:0;bottom:0;height:67%}
+    .plant{position:absolute;text-align:center;transform:translate(-50%,0);animation:grow .45s ease-out;filter:drop-shadow(0 4px 2px #0002);user-select:none}
+    .plant .flower{font-size:52px;line-height:.8}.plant .stem{font-size:48px;line-height:.7;color:#237a35}.plant .label{font-weight:700;background:#ffffffda;border-radius:999px;padding:4px 10px;font-size:13px;box-shadow:0 2px 6px #0001;margin-top:2px}
+    @keyframes grow{from{transform:translate(-50%,0) scale(.1);opacity:0}to{transform:translate(-50%,0) scale(1);opacity:1}}
+    .message{font-size:1.25rem;background:#fff8d9;border-left:7px solid #ffd36e;padding:14px;border-radius:14px;margin-top:14px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:15px}.actions button{border:0;border-radius:999px;padding:12px 18px;background:var(--green);color:#fff;font-weight:700;cursor:pointer}.actions button.secondary{background:#7a6246}
+    .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.card{background:#fff;border-radius:20px;padding:15px;border:1px solid #e5f2df}.card img{width:100%;height:160px;object-fit:cover;border-radius:14px}
+    @media(max-width:760px){.intro{grid-template-columns:1fr}.garden-wrap{min-height:390px}.plant .flower{font-size:42px}.plant .stem{font-size:38px}}
+  </style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>My Feelings Garden</h1>
+    <p>A small interactive game inspired by <strong>The Garden In Me</strong>. Pick how you feel, plant a seed, and watch your emotional garden grow.</p>
+  </div>
+</header>
+<main class="wrap">
+  <section class="panel intro">
+    <div>
+      <h2>How are you feeling today?</h2>
+      <p>Every feeling belongs in the garden. Joy, sadness, anger, fear, love, calm, and surprise can all grow into something meaningful when we notice them gently.</p>
+      <p><strong>Choose a feeling seed below.</strong> Your garden will remember the flowers you plant on this device.</p>
+    </div>
+    <img src="assets/book_table.jpg" alt="The Garden In Me book display with activity sheets" />
+  </section>
+  <section class="panel">
+    <h2>Plant a feeling seed</h2>
+    <div class="choices" id="choices"></div>
+    <div class="message" id="message">Pick a seed to begin. 🌱</div>
+  </section>
+  <section class="panel">
+    <h2>Your Garden</h2>
+    <div class="garden-wrap">
+      <div class="sun"></div><div class="cloud"></div><div id="garden"></div>
+    </div>
+    <div class="actions"><button id="savePic">Save Garden as Picture</button><button class="secondary" id="clearGarden">Start a New Garden</button></div>
+  </section>
+  <section class="panel">
+    <h2>Why this works with the book</h2>
+    <div class="footer-grid">
+      <div class="card"><img src="assets/author_booth.jpg" alt="Author holding The Garden In Me"><h3>Warm and human</h3><p>The game keeps the book’s gentle garden metaphor alive.</p></div>
+      <div class="card"><img src="assets/teens_reading.jpg" alt="Young adults reading The Garden In Me"><h3>Not just for little kids</h3><p>Older children and adults can still use it as a quiet emotional check-in.</p></div>
+      <div class="card"><h3>No bad feelings</h3><p>The goal is not to win. The goal is to recognize feelings and let them belong.</p></div>
+    </div>
+  </section>
+</main>
+<script>
+const seeds=[
+  {name:'Joy',emoji:'🌻',flower:'🌻',msg:'Joy is like sunlight. Let it warm your garden.'},
+  {name:'Sadness',emoji:'💧',flower:'🪻',msg:'Sadness is like rain. It can help gentle things grow.'},
+  {name:'Anger',emoji:'🔥',flower:'🌹',msg:'Anger tells us something matters. Breathe and listen to it safely.'},
+  {name:'Fear',emoji:'🌙',flower:'💜',msg:'Fear is a small shadow. Courage can grow beside it.'},
+  {name:'Love',emoji:'💚',flower:'🌷',msg:'Love is a root. It quietly holds the garden together.'},
+  {name:'Calm',emoji:'🍃',flower:'🌿',msg:'Calm is a soft breeze moving through the leaves.'},
+  {name:'Surprise',emoji:'✨',flower:'🌼',msg:'Surprise is a bright little flower you did not expect.'},
+  {name:'Pride',emoji:'⭐',flower:'🌺',msg:'Pride grows when you notice your own effort.'}
+];
+const choices=document.getElementById('choices'),garden=document.getElementById('garden'),message=document.getElementById('message');
+let plants=JSON.parse(localStorage.getItem('feelingsGarden')||'[]');
+function save(){localStorage.setItem('feelingsGarden',JSON.stringify(plants));}
+function renderChoices(){choices.innerHTML='';seeds.forEach(s=>{let b=document.createElement('button');b.className='seed';b.innerHTML=`<span class="emoji">${s.emoji}</span><strong>${s.name}</strong><br><small>Plant this feeling</small>`;b.onclick=()=>plant(s);choices.appendChild(b);});}
+function plant(seed){const p={...seed,x:10+Math.random()*80,y:8+Math.random()*43,scale:.85+Math.random()*.45,date:new Date().toLocaleDateString()};plants.push(p);save();message.textContent=seed.msg;renderGarden();}
+function renderGarden(){garden.innerHTML='';plants.forEach((p,i)=>{let d=document.createElement('div');d.className='plant';d.style.left=p.x+'%';d.style.bottom=p.y+'%';d.style.transform=`translate(-50%,0) scale(${p.scale||1})`;d.title=p.name+' planted '+(p.date||'');d.innerHTML=`<div class="flower">${p.flower}</div><div class="stem">│</div><div class="label">${p.name}</div>`;garden.appendChild(d);});}
+document.getElementById('clearGarden').onclick=()=>{if(confirm('Start a fresh garden?')){plants=[];save();renderGarden();message.textContent='A fresh patch of soil is ready. 🌱';}};
+document.getElementById('savePic').onclick=()=>{alert('Tip: use your phone/computer screenshot button to save your garden picture.');};
+renderChoices();renderGarden();
+</script>
+</body>
+</html>
