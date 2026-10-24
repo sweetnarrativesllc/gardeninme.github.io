@@ -8,9 +8,7 @@
     --shadow-soft: 0 18px 45px rgba(15, 67, 45, 0.22);
   }
 
-  * {
-    scroll-behavior: smooth;
-  }
+  * { scroll-behavior: auto; }
 
   body {
     font-family: "Quicksand", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -1457,4 +1455,24 @@ section { scroll-margin-top: 85px; }
 @media(min-width:768px) and (max-width:991.98px) {
   .hero-grid > .col-lg-6:first-child {padding-right:0!important;}
   .hero-artwork-stage {position:static;width:100%;margin:12px auto;}
+}
+
+/* V7 performance and Android header fixes */
+html { scroll-behavior:auto!important; }
+body::before { display:none!important; }
+.navbar { backdrop-filter:none!important; -webkit-backdrop-filter:none!important; }
+.garden-reader-track { scroll-behavior:auto!important; contain:layout paint; }
+.garden-reader-slide { flex-shrink:0!important; }
+.garden-reader-open img { width:100%!important; height:auto!important; }
+@media(max-width:767.98px) {
+  #mainNav.navbar.fixed-top { position:relative!important; top:auto!important; left:auto!important; right:auto!important; }
+  .hero { padding-top:20px!important; }
+  section, #peek-inside { scroll-margin-top:12px!important; }
+  .hero-cover-shell { padding:8px!important; }
+  .hero-artwork-stage .hero-cover { width:min(65vw,250px)!important; }
+  .hero-subtitle { font-size:.96rem!important; line-height:1.48!important; }
+  .hero-tagline { font-size:.86rem!important; line-height:1.35!important; }
+  .hero-title { font-size:clamp(1.95rem,7.5vw,2.45rem)!important; }
+  .reveal-on-scroll { opacity:1!important; transform:none!important; transition:none!important; }
+  .peek-zoom-viewport { height:calc(100dvh - 72px); overflow:auto; }
 }
