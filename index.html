@@ -117,7 +117,7 @@
   <!-- HERO -->
   <section class="hero" id="top">
     <div class="container">
-      <div class="row align-items-center g-5">
+      <div class="row align-items-center g-5 hero-grid">
         <div class="col-lg-6 order-2 order-lg-1">
           <div class="hero-badge mb-3">
             <span>🌿</span>
@@ -335,7 +335,7 @@
           <span class="badge-soft mt-3 mt-md-0">3 interior spreads</span>
         </div>
 
-        <div id="peekInsideCarousel" class="carousel slide reveal-on-scroll" data-bs-ride="carousel">
+        <div id="peekInsideCarousel" class="carousel slide reveal-on-scroll peek-desktop-carousel" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#peekInsideCarousel" data-bs-slide-to="0" class="active"
               aria-current="true" aria-label="Spread 1"></button>
@@ -368,6 +368,50 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
+        </div>
+
+        <!-- Mobile-only page-by-page preview: original spreads remain unchanged above. -->
+        <div id="peekMobileCarousel" class="carousel slide peek-mobile-carousel" data-bs-touch="true" data-bs-interval="false" aria-label="Peek inside the book on mobile">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <a href="img/peek_spread_1.jpg" target="_blank" rel="noopener" aria-label="Open original full spread 1 in a new tab">
+                <img src="img/peek_spread_1_left.jpg" alt="The Garden In Me preview spread 1, left page" class="d-block w-100" loading="lazy" decoding="async">
+              </a>
+              <p class="peek-page-indicator" aria-hidden="true">1 / 6 · Tap to open full spread</p>
+            </div>
+            <div class="carousel-item">
+              <a href="img/peek_spread_1.jpg" target="_blank" rel="noopener" aria-label="Open original full spread 1 in a new tab">
+                <img src="img/peek_spread_1_right.jpg" alt="The Garden In Me preview spread 1, right page" class="d-block w-100" loading="lazy" decoding="async">
+              </a>
+              <p class="peek-page-indicator" aria-hidden="true">2 / 6 · Tap to open full spread</p>
+            </div>
+            <div class="carousel-item">
+              <a href="img/peek_spread_2.jpg" target="_blank" rel="noopener" aria-label="Open original full spread 2 in a new tab">
+                <img src="img/peek_spread_2_left.jpg" alt="The Garden In Me preview spread 2, left page" class="d-block w-100" loading="lazy" decoding="async">
+              </a>
+              <p class="peek-page-indicator" aria-hidden="true">3 / 6 · Tap to open full spread</p>
+            </div>
+            <div class="carousel-item">
+              <a href="img/peek_spread_2.jpg" target="_blank" rel="noopener" aria-label="Open original full spread 2 in a new tab">
+                <img src="img/peek_spread_2_right.jpg" alt="The Garden In Me preview spread 2, right page" class="d-block w-100" loading="lazy" decoding="async">
+              </a>
+              <p class="peek-page-indicator" aria-hidden="true">4 / 6 · Tap to open full spread</p>
+            </div>
+            <div class="carousel-item">
+              <a href="img/peek_spread_3.jpg" target="_blank" rel="noopener" aria-label="Open original full spread 3 in a new tab">
+                <img src="img/peek_spread_3_left.jpg" alt="The Garden In Me preview spread 3, left page" class="d-block w-100" loading="lazy" decoding="async">
+              </a>
+              <p class="peek-page-indicator" aria-hidden="true">5 / 6 · Tap to open full spread</p>
+            </div>
+            <div class="carousel-item">
+              <a href="img/peek_spread_3.jpg" target="_blank" rel="noopener" aria-label="Open original full spread 3 in a new tab">
+                <img src="img/peek_spread_3_right.jpg" alt="The Garden In Me preview spread 3, right page" class="d-block w-100" loading="lazy" decoding="async">
+              </a>
+              <p class="peek-page-indicator" aria-hidden="true">6 / 6 · Tap to open full spread</p>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#peekMobileCarousel" data-bs-slide="prev" aria-label="Previous page"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+          <button class="carousel-control-next" type="button" data-bs-target="#peekMobileCarousel" data-bs-slide="next" aria-label="Next page"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
         </div>
 
         <p class="small text-muted mt-2">

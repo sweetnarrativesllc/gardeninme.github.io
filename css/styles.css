@@ -1287,3 +1287,82 @@
       scroll-behavior: auto !important;
     }
   }
+
+/* ===============================================================
+   STORYBOOK REDESIGN — additive overrides; original CSS retained.
+   Original image files and all approved visible wording preserved.
+   =============================================================== */
+:root { --garden-ink: #234331; --garden-paper: #fffdf6; }
+body { background: #fffdf6; }
+body::before { opacity: .28; }
+section { scroll-margin-top: 85px; }
+.hero { min-height: 0; padding-top: 128px; padding-bottom: 72px;
+  background: radial-gradient(ellipse at 75% 40%, rgba(218,239,207,.9),transparent 55%),
+  linear-gradient(145deg,#fffdf5 10%,#f0f8e8 65%,#fff9e6 100%); }
+.hero .container { max-width: 1200px; }
+.hero-title { font-size: clamp(3rem,5.2vw,5rem); letter-spacing: -.045em; line-height: 1.08; }
+.hero-subtitle { line-height: 1.65; }
+.hero-pill { gap: .55rem; }
+.hero-pill span { background: #fffef9; border-color: rgba(50,112,73,.16); }
+.hero-cover-shell { padding: 14px; background: rgba(255,255,255,.55); }
+.hero-cover { width: min(100%, 400px); height: auto; border-radius: 12px; }
+.hero-cover:hover { filter: none; }
+.hero-milestone { margin-top: 1.5rem !important; }
+.section-title { line-height: 1.2; letter-spacing: -.025em; }
+.py-lg-6 { padding-top: 5.5rem; padding-bottom: 5.5rem; }
+.feature-card, .quote-card, .book-details-card, .activities-card, .contact-card {
+  box-shadow: 0 10px 30px rgba(29,55,42,.07); border-radius: 20px; }
+.feature-card img { display:block; width:100%; object-fit:cover; }
+#community .feature-card img { aspect-ratio: 4/3; }
+#peek-inside { scroll-margin-top: 100px; }
+#peekInsideCarousel .carousel-item img { height: auto; object-fit: contain; }
+.peek-mobile-carousel { display: none; }
+.navbar .container { max-width: 1380px; }
+.nav-link { padding-inline: .55rem !important; font-size: .88rem; }
+.reveal-on-scroll { transition-duration: .45s; }
+@media (max-width: 991.98px) {
+  .hero { padding-top: 88px; padding-bottom: 42px; }
+  .hero .row { row-gap: 0 !important; }
+  .hero-grid > div:first-child { order: 1 !important; }
+  .hero-grid > div:last-child { order: 2 !important; }
+  .hero-title { font-size: clamp(2.5rem,8vw,3.5rem); margin-bottom: .7rem !important; }
+  .hero-tagline { margin-top: .4rem; }
+  .hero-illustration-wrap { margin-top: 1.1rem; width:100%; }
+  .hero-cover-shell { padding: 7px; }
+  .hero-cover { width: min(60vw, 270px); }
+  .hero-floating-card { display:none; }
+  .hero-milestone { margin-inline:auto !important; }
+  .hero .hero-pill { justify-content: center; }
+  .hero .hero-rating { justify-content:center; }
+  .py-lg-6 { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+}
+@media (max-width: 767.98px) {
+  .hero { padding-top: 84px; padding-bottom: 30px; }
+  .hero .container { padding-inline: 18px; }
+  .hero-title { font-size: clamp(2.35rem, 9vw, 3.1rem); }
+  .hero-tagline { font-size: .8rem; letter-spacing: .03em; }
+  .hero-subtitle { font-size: .95rem; line-height: 1.5; }
+  .hero-cover { width: min(57vw, 240px); }
+  .hero-pill span { padding: .25rem .65rem; font-size: .79rem; }
+  .hero-milestone { padding: 15px 17px !important; border-radius: 16px !important; }
+  .hero-milestone > div:nth-child(2) { font-size: 2rem !important; }
+  .hero .btn { font-size: .93rem; padding-block: .7rem; }
+  #peekInsideCarousel { display: none !important; }
+  .peek-mobile-carousel { display: block; margin-inline: -8px; }
+  .peek-mobile-carousel .carousel-inner { border-radius: 16px; background: #f7f5ed;
+    box-shadow: 0 14px 36px rgba(20,56,34,.12); }
+  .peek-mobile-carousel .carousel-item img { display: block; width: 100%; height:auto; aspect-ratio: 1 / 1.035;
+    object-fit: contain; background: #fff; }
+  .peek-mobile-carousel .carousel-item a { display:block; }
+  .peek-page-indicator { text-align:center; padding: 8px 0 12px; margin:0; color:#31543d; font-size:.83rem; }
+  .peek-mobile-carousel .carousel-control-prev,
+  .peek-mobile-carousel .carousel-control-next { width: 38px; height: 38px; top: 48%; background: rgba(255,255,255,.88); }
+  .peek-mobile-carousel .carousel-control-prev { left: 4px; }
+  .peek-mobile-carousel .carousel-control-next { right: 4px; }
+  #peek-inside .section-title { font-size: 1.7rem !important; }
+  #community .feature-card img { aspect-ratio: 4/3; }
+  .card-body { padding: 1.3rem !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll { opacity: 1 !important; transform: none !important; }
+}
