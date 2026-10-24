@@ -1,13 +1,11 @@
-THE GARDEN IN ME — V2 PREVIEW (2026-10-24)
+THE GARDEN IN ME — V3 LOCAL PREVIEW
 
-What changed:
-- Desktop Peek Inside: six two-page spreads. Original three retained.
-- Mobile Peek Inside: twelve individual pages, one at a time.
-- Mobile first screen: original book cover and purchase/peek buttons moved higher; original text preserved.
-- Desktop: wider heading column and slightly higher cover alignment.
+This is a PATCH package. Extract into a COPY of your website root, merging img/spread and replacing index.html and css/styles.css. Keep all existing other images and files.
 
-IMPORTANT: This is a PATCH PACKAGE, not the full website. Copy index.html, css/styles.css and the files in img/ into a COPY of your existing website folder. Keep all existing other img files, coloring folder, game.html and other site files. Do not publish before checking locally.
+One original book cover in HTML, responsive position. Six COMPLETE two-page spreads, side-by-side on desktop and mobile. Tap a spread for a fullscreen zoomable viewer with +, - and Fit buttons.
 
-The new PDF-derived previews are unmodified renderings of original artwork with left/right display crops for mobile. Three original peek_spread_X.jpg assets are still referenced from your existing img folder.
+spread.zip contained FIVE spreads (page-03, page-05, page-08, page-12, page-13). These five PNG files are copied byte-for-byte, unaltered. The sixth (page-06) is rendered from the original PDF.
 
-All original HTML visible text preserved except the count badge changed to 6 interior spreads. The mobile buttons repeat the existing exact wording for responsive placement.
+The original visible book copy remains; gallery indicator and zoom interface wording have changed as necessary. No original image is recolored or redrawn.
+
+Do not publish until you approve the preview.
