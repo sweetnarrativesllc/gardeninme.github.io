@@ -132,6 +132,13 @@
             The Garden In Me
           </h1>
 
+          <div class="mobile-hero-cover text-center" aria-label="Original book cover">
+            <img src="img/cover-800.jpg" alt="The Garden In Me book cover" width="800" height="800" fetchpriority="high" decoding="async">
+          </div>
+          <div class="mobile-hero-actions d-flex flex-wrap justify-content-center gap-2">
+            <a href="https://a.co/d/7utg5G7" target="_blank" class="btn btn-success hero-cta-primary">🌼 Get it now on Amazon</a>
+            <a href="#peek-inside" class="btn btn-outline-success hero-cta-secondary">Peek inside the book</a>
+          </div>
           <p class="hero-subtitle mb-3">
             An imaginative journey into a child's inspiring inner garden—a creatively narrated and beautifully
             illustrated story that helps children explore, enjoy, understand, and appreciate their emotions.
@@ -332,88 +339,47 @@
               speaks to little hearts with big feelings.
             </p>
           </div>
-          <span class="badge-soft mt-3 mt-md-0">3 interior spreads</span>
+          <span class="badge-soft mt-3 mt-md-0">6 interior spreads</span>
         </div>
 
-        <div id="peekInsideCarousel" class="carousel slide reveal-on-scroll peek-desktop-carousel" data-bs-ride="carousel">
+        <div id="peekInsideCarousel" class="carousel slide reveal-on-scroll peek-desktop-carousel" data-bs-interval="false" data-bs-touch="true" aria-label="Six original book spreads">
           <div class="carousel-indicators">
-            <button type="button" data-bs-target="#peekInsideCarousel" data-bs-slide-to="0" class="active"
-              aria-current="true" aria-label="Spread 1"></button>
-            <button type="button" data-bs-target="#peekInsideCarousel" data-bs-slide-to="1"
-              aria-label="Spread 2"></button>
-            <button type="button" data-bs-target="#peekInsideCarousel" data-bs-slide-to="2"
-              aria-label="Spread 3"></button>
+            <button type="button" data-bs-target="#peekInsideCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Spread 1"></button>
+            <button type="button" data-bs-target="#peekInsideCarousel" data-bs-slide-to="1" aria-label="Spread 2"></button>
+            <button type="button" data-bs-target="#peekInsideCarousel" data-bs-slide-to="2" aria-label="Spread 3"></button>
+            <button type="button" data-bs-target="#peekInsideCarousel" data-bs-slide-to="3" aria-label="Spread 4"></button>
+            <button type="button" data-bs-target="#peekInsideCarousel" data-bs-slide-to="4" aria-label="Spread 5"></button>
+            <button type="button" data-bs-target="#peekInsideCarousel" data-bs-slide-to="5" aria-label="Spread 6"></button>
           </div>
-
           <div class="carousel-inner rounded-4 shadow-lg bg-white">
-            <div class="carousel-item active">
-              <img src="img/peek_spread_1.jpg" class="d-block w-100"
-                alt="Opening spread of The Garden In Me, introducing the magical inner garden of big emotions">
-            </div>
-            <div class="carousel-item">
-              <img src="img/peek_spread_2.jpg" class="d-block w-100"
-                alt="Interior spread showing the child exploring feelings with playful, colorful illustrations">
-            </div>
-            <div class="carousel-item">
-              <img src="img/peek_spread_3.jpg" class="d-block w-100"
-                alt="Interior spread where different emotions appear like flowers and weather in the garden">
-            </div>
+            <div class="carousel-item active"><img src="img/peek_spread_1.jpg" class="d-block w-100" alt="Original interior book spread 1 of six" loading="lazy" decoding="async"></div>
+            <div class="carousel-item"><img src="img/peek_spread_pdf_4.jpg" class="d-block w-100" alt="Original interior book spread 2 of six" loading="lazy" decoding="async"></div>
+            <div class="carousel-item"><img src="img/peek_spread_pdf_6.jpg" class="d-block w-100" alt="Original interior book spread 3 of six" loading="lazy" decoding="async"></div>
+            <div class="carousel-item"><img src="img/peek_spread_2.jpg" class="d-block w-100" alt="Original interior book spread 4 of six" loading="lazy" decoding="async"></div>
+            <div class="carousel-item"><img src="img/peek_spread_pdf_11.jpg" class="d-block w-100" alt="Original interior book spread 5 of six" loading="lazy" decoding="async"></div>
+            <div class="carousel-item"><img src="img/peek_spread_3.jpg" class="d-block w-100" alt="Original interior book spread 6 of six" loading="lazy" decoding="async"></div>
           </div>
-
-          <button class="carousel-control-prev" type="button" data-bs-target="#peekInsideCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#peekInsideCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+          <button class="carousel-control-prev" type="button" data-bs-target="#peekInsideCarousel" data-bs-slide="prev" aria-label="Previous spread"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+          <button class="carousel-control-next" type="button" data-bs-target="#peekInsideCarousel" data-bs-slide="next" aria-label="Next spread"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
         </div>
-
-        <!-- Mobile-only page-by-page preview: original spreads remain unchanged above. -->
-        <div id="peekMobileCarousel" class="carousel slide peek-mobile-carousel" data-bs-touch="true" data-bs-interval="false" aria-label="Peek inside the book on mobile">
+        <div id="peekMobileCarousel" class="carousel slide peek-mobile-carousel" data-bs-touch="true" data-bs-interval="false" aria-label="Twelve book pages, one page at a time on mobile">
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <a href="img/peek_spread_1.jpg" target="_blank" rel="noopener" aria-label="Open original full spread 1 in a new tab">
-                <img src="img/peek_spread_1_left.jpg" alt="The Garden In Me preview spread 1, left page" class="d-block w-100" loading="lazy" decoding="async">
-              </a>
-              <p class="peek-page-indicator" aria-hidden="true">1 / 6 · Tap to open full spread</p>
-            </div>
-            <div class="carousel-item">
-              <a href="img/peek_spread_1.jpg" target="_blank" rel="noopener" aria-label="Open original full spread 1 in a new tab">
-                <img src="img/peek_spread_1_right.jpg" alt="The Garden In Me preview spread 1, right page" class="d-block w-100" loading="lazy" decoding="async">
-              </a>
-              <p class="peek-page-indicator" aria-hidden="true">2 / 6 · Tap to open full spread</p>
-            </div>
-            <div class="carousel-item">
-              <a href="img/peek_spread_2.jpg" target="_blank" rel="noopener" aria-label="Open original full spread 2 in a new tab">
-                <img src="img/peek_spread_2_left.jpg" alt="The Garden In Me preview spread 2, left page" class="d-block w-100" loading="lazy" decoding="async">
-              </a>
-              <p class="peek-page-indicator" aria-hidden="true">3 / 6 · Tap to open full spread</p>
-            </div>
-            <div class="carousel-item">
-              <a href="img/peek_spread_2.jpg" target="_blank" rel="noopener" aria-label="Open original full spread 2 in a new tab">
-                <img src="img/peek_spread_2_right.jpg" alt="The Garden In Me preview spread 2, right page" class="d-block w-100" loading="lazy" decoding="async">
-              </a>
-              <p class="peek-page-indicator" aria-hidden="true">4 / 6 · Tap to open full spread</p>
-            </div>
-            <div class="carousel-item">
-              <a href="img/peek_spread_3.jpg" target="_blank" rel="noopener" aria-label="Open original full spread 3 in a new tab">
-                <img src="img/peek_spread_3_left.jpg" alt="The Garden In Me preview spread 3, left page" class="d-block w-100" loading="lazy" decoding="async">
-              </a>
-              <p class="peek-page-indicator" aria-hidden="true">5 / 6 · Tap to open full spread</p>
-            </div>
-            <div class="carousel-item">
-              <a href="img/peek_spread_3.jpg" target="_blank" rel="noopener" aria-label="Open original full spread 3 in a new tab">
-                <img src="img/peek_spread_3_right.jpg" alt="The Garden In Me preview spread 3, right page" class="d-block w-100" loading="lazy" decoding="async">
-              </a>
-              <p class="peek-page-indicator" aria-hidden="true">6 / 6 · Tap to open full spread</p>
-            </div>
+            <div class="carousel-item active"><a href="img/peek_spread_1.jpg" target="_blank" rel="noopener" aria-label="Open complete original spread 1"><img src="img/peek_spread_1_left.jpg" alt="Original book preview page 1 of twelve" class="d-block w-100" loading="lazy" decoding="async"></a><p class="peek-page-indicator">1 / 12 · Tap to open full spread</p></div>
+            <div class="carousel-item"><a href="img/peek_spread_1.jpg" target="_blank" rel="noopener" aria-label="Open complete original spread 1"><img src="img/peek_spread_1_right.jpg" alt="Original book preview page 2 of twelve" class="d-block w-100" loading="lazy" decoding="async"></a><p class="peek-page-indicator">2 / 12 · Tap to open full spread</p></div>
+            <div class="carousel-item"><a href="img/peek_spread_pdf_4.jpg" target="_blank" rel="noopener" aria-label="Open complete original spread 2"><img src="img/peek_spread_pdf_4_left.jpg" alt="Original book preview page 3 of twelve" class="d-block w-100" loading="lazy" decoding="async"></a><p class="peek-page-indicator">3 / 12 · Tap to open full spread</p></div>
+            <div class="carousel-item"><a href="img/peek_spread_pdf_4.jpg" target="_blank" rel="noopener" aria-label="Open complete original spread 2"><img src="img/peek_spread_pdf_4_right.jpg" alt="Original book preview page 4 of twelve" class="d-block w-100" loading="lazy" decoding="async"></a><p class="peek-page-indicator">4 / 12 · Tap to open full spread</p></div>
+            <div class="carousel-item"><a href="img/peek_spread_pdf_6.jpg" target="_blank" rel="noopener" aria-label="Open complete original spread 3"><img src="img/peek_spread_pdf_6_left.jpg" alt="Original book preview page 5 of twelve" class="d-block w-100" loading="lazy" decoding="async"></a><p class="peek-page-indicator">5 / 12 · Tap to open full spread</p></div>
+            <div class="carousel-item"><a href="img/peek_spread_pdf_6.jpg" target="_blank" rel="noopener" aria-label="Open complete original spread 3"><img src="img/peek_spread_pdf_6_right.jpg" alt="Original book preview page 6 of twelve" class="d-block w-100" loading="lazy" decoding="async"></a><p class="peek-page-indicator">6 / 12 · Tap to open full spread</p></div>
+            <div class="carousel-item"><a href="img/peek_spread_2.jpg" target="_blank" rel="noopener" aria-label="Open complete original spread 4"><img src="img/peek_spread_2_left.jpg" alt="Original book preview page 7 of twelve" class="d-block w-100" loading="lazy" decoding="async"></a><p class="peek-page-indicator">7 / 12 · Tap to open full spread</p></div>
+            <div class="carousel-item"><a href="img/peek_spread_2.jpg" target="_blank" rel="noopener" aria-label="Open complete original spread 4"><img src="img/peek_spread_2_right.jpg" alt="Original book preview page 8 of twelve" class="d-block w-100" loading="lazy" decoding="async"></a><p class="peek-page-indicator">8 / 12 · Tap to open full spread</p></div>
+            <div class="carousel-item"><a href="img/peek_spread_pdf_11.jpg" target="_blank" rel="noopener" aria-label="Open complete original spread 5"><img src="img/peek_spread_pdf_11_left.jpg" alt="Original book preview page 9 of twelve" class="d-block w-100" loading="lazy" decoding="async"></a><p class="peek-page-indicator">9 / 12 · Tap to open full spread</p></div>
+            <div class="carousel-item"><a href="img/peek_spread_pdf_11.jpg" target="_blank" rel="noopener" aria-label="Open complete original spread 5"><img src="img/peek_spread_pdf_11_right.jpg" alt="Original book preview page 10 of twelve" class="d-block w-100" loading="lazy" decoding="async"></a><p class="peek-page-indicator">10 / 12 · Tap to open full spread</p></div>
+            <div class="carousel-item"><a href="img/peek_spread_3.jpg" target="_blank" rel="noopener" aria-label="Open complete original spread 6"><img src="img/peek_spread_3_left.jpg" alt="Original book preview page 11 of twelve" class="d-block w-100" loading="lazy" decoding="async"></a><p class="peek-page-indicator">11 / 12 · Tap to open full spread</p></div>
+            <div class="carousel-item"><a href="img/peek_spread_3.jpg" target="_blank" rel="noopener" aria-label="Open complete original spread 6"><img src="img/peek_spread_3_right.jpg" alt="Original book preview page 12 of twelve" class="d-block w-100" loading="lazy" decoding="async"></a><p class="peek-page-indicator">12 / 12 · Tap to open full spread</p></div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#peekMobileCarousel" data-bs-slide="prev" aria-label="Previous page"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
           <button class="carousel-control-next" type="button" data-bs-target="#peekMobileCarousel" data-bs-slide="next" aria-label="Next page"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
         </div>
-
         <p class="small text-muted mt-2">
           Final print colors may vary slightly from on-screen preview, but the feelings are just as bright.
         </p>

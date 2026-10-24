@@ -1,14 +1,13 @@
-THE GARDEN IN ME — REDESIGN PREVIEW (NOT YET PUBLISHED)
+THE GARDEN IN ME — V2 PREVIEW (2026-10-24)
 
-This ZIP contains replacement index.html and css/styles.css plus six NEW mobile Peek Inside images.
+What changed:
+- Desktop Peek Inside: six two-page spreads. Original three retained.
+- Mobile Peek Inside: twelve individual pages, one at a time.
+- Mobile first screen: original book cover and purchase/peek buttons moved higher; original text preserved.
+- Desktop: wider heading column and slightly higher cover alignment.
 
-1. Back up your current site.
-2. Copy index.html and css/styles.css into your existing repository, replacing those two files.
-3. Copy the six JPG files in img/ into your existing img/ folder.
-4. KEEP your existing img/ files, coloring/ folder, game.html, CNAME, and .git folder unchanged.
-5. Open index.html in a local browser, test mobile and desktop, and publish only when approved.
+IMPORTANT: This is a PATCH PACKAGE, not the full website. Copy index.html, css/styles.css and the files in img/ into a COPY of your existing website folder. Keep all existing other img files, coloring folder, game.html and other site files. Do not publish before checking locally.
 
-ALL original visible text nodes were compared with the supplied index.html and preserved verbatim.
-The original Peek Inside spreads are unchanged. Six mobile-only display halves are derived from the three existing spreads; they do not overwrite the originals. Tapping a page opens the complete original spread.
+The new PDF-derived previews are unmodified renderings of original artwork with left/right display crops for mobile. Three original peek_spread_X.jpg assets are still referenced from your existing img folder.
 
-This is a first-pass visual redesign for review. Some content sections retain their current arrangement.
+All original HTML visible text preserved except the count badge changed to 6 interior spreads. The mobile buttons repeat the existing exact wording for responsive placement.
